@@ -45,7 +45,7 @@ public class TicTacToe implements ActionListener {
         button_panel.setLayout(new GridLayout(3,5));
         button_panel.setBackground(new Color(240,248,255));
 
-        
+
 
 
 
@@ -239,7 +239,7 @@ public class TicTacToe implements ActionListener {
             oWins(2,4,6);
         }
         //check draw
-       if (
+        if (
                 ((buttons[0].getText()=="O")||(buttons[0].getText()=="X"))&&
                         ((buttons[1].getText()=="O")||(buttons[1].getText()=="X"))&&
                         ((buttons[2].getText()=="O")||(buttons[2].getText()=="X"))&&
@@ -251,7 +251,7 @@ public class TicTacToe implements ActionListener {
                         ((buttons[8].getText()=="O")||(buttons[8].getText()=="X"))
 
         ) {
-            draw(0,1,2,3,4,5,6,7,8);
+            draw();
         }
     }
 
@@ -265,7 +265,7 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textfield.setText("X Wins");
-        resetGame(0,1,2,3,4,5,6,7,8);
+        resetGame();
 
     }
 
@@ -279,46 +279,27 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textfield.setText("O Wins");
-        resetGame(0,1,2,3,4,5,6,7,8);
+        resetGame();
 
     }
 
-    public void draw(int a, int b, int c, int d, int e, int f, int g, int h, int j) {
-
-        buttons[a].setBackground(new Color (255, 228, 181));
-        buttons[b].setBackground(new Color (255, 228, 181));
-        buttons[c].setBackground(new Color (255, 228, 181));
-        buttons[d].setBackground(new Color (255, 228, 181));
-        buttons[e].setBackground(new Color (255, 228, 181));
-        buttons[f].setBackground(new Color (255, 228, 181));
-        buttons[g].setBackground(new Color (255, 228, 181));
-        buttons[h].setBackground(new Color (255, 228, 181));
-        buttons[j].setBackground(new Color (255, 228, 181));
+    public void draw() {
 
         for (int i = 0; i<9; i++) {
             buttons[i].setEnabled(false);
+            buttons[i].setBackground(new Color (255, 228, 181));
         }
         textfield.setText("Draw");
-        resetGame(0,1,2,3,4,5,6,7,8);
+        resetGame();
     }
 
-    public void resetGame(int a, int b, int c, int d, int e, int f, int g, int h, int j) {
+    public void resetGame() {
         firstTurn();
         for (int i = 0; i<9; i++) {
             buttons[i].setText("");
             buttons[i].setEnabled(true);
+            buttons[i].setBackground(Color.WHITE);
         }
-        buttons[a].setBackground(Color.WHITE);
-        buttons[b].setBackground(Color.WHITE);
-        buttons[c].setBackground(Color.WHITE);
-        buttons[d].setBackground(Color.WHITE);
-        buttons[e].setBackground(Color.WHITE);
-        buttons[f].setBackground(Color.WHITE);
-        buttons[g].setBackground(Color.WHITE);
-        buttons[h].setBackground(Color.WHITE);
-        buttons[j].setBackground(Color.WHITE);
-
 
     }
 }
-
