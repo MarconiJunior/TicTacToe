@@ -238,21 +238,21 @@ public class TicTacToe implements ActionListener {
         ) {
             oWins(2,4,6);
         }
-        /*check draw
+        //check draw
        if (
-                (buttons[0].getText()=="O")||(buttons[0].getText()=="X")&&
-                        (buttons[1].getText()=="O")||(buttons[1].getText()=="X")&&
-                        (buttons[2].getText()=="O")||(buttons[2].getText()=="X")&&
-                        (buttons[3].getText()=="O")||(buttons[3].getText()=="X")&&
-                        (buttons[4].getText()=="O")||(buttons[4].getText()=="X")&&
-                        (buttons[5].getText()=="O")||(buttons[5].getText()=="X")&&
-                        (buttons[6].getText()=="O")||(buttons[6].getText()=="X")&&
-                        (buttons[7].getText()=="O")||(buttons[7].getText()=="X")&&
-                        (buttons[8].getText()=="O")||(buttons[8].getText()=="X")
+                ((buttons[0].getText()=="O")||(buttons[0].getText()=="X"))&&
+                        ((buttons[1].getText()=="O")||(buttons[1].getText()=="X"))&&
+                        ((buttons[2].getText()=="O")||(buttons[2].getText()=="X"))&&
+                        ((buttons[3].getText()=="O")||(buttons[3].getText()=="X"))&&
+                        ((buttons[4].getText()=="O")||(buttons[4].getText()=="X"))&&
+                        ((buttons[5].getText()=="O")||(buttons[5].getText()=="X"))&&
+                        ((buttons[6].getText()=="O")||(buttons[6].getText()=="X"))&&
+                        ((buttons[7].getText()=="O")||(buttons[7].getText()=="X"))&&
+                        ((buttons[8].getText()=="O")||(buttons[8].getText()=="X"))
 
         ) {
             draw(0,1,2,3,4,5,6,7,8);
-        }*/
+        }
     }
 
     public void xWins(int a,int b, int c) {
@@ -265,7 +265,7 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textfield.setText("X Wins");
-
+        resetGame(0,1,2,3,4,5,6,7,8);
 
     }
 
@@ -279,7 +279,7 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textfield.setText("O Wins");
-
+        resetGame(0,1,2,3,4,5,6,7,8);
 
     }
 
@@ -299,6 +299,25 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textfield.setText("Draw");
+        resetGame(0,1,2,3,4,5,6,7,8);
+    }
+
+    public void resetGame(int a, int b, int c, int d, int e, int f, int g, int h, int j) {
+        firstTurn();
+        for (int i = 0; i<9; i++) {
+            buttons[i].setText("");
+            buttons[i].setEnabled(true);
+        }
+        buttons[a].setBackground(Color.WHITE);
+        buttons[b].setBackground(Color.WHITE);
+        buttons[c].setBackground(Color.WHITE);
+        buttons[d].setBackground(Color.WHITE);
+        buttons[e].setBackground(Color.WHITE);
+        buttons[f].setBackground(Color.WHITE);
+        buttons[g].setBackground(Color.WHITE);
+        buttons[h].setBackground(Color.WHITE);
+        buttons[j].setBackground(Color.WHITE);
+
 
     }
 }
