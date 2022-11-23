@@ -265,7 +265,7 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textfield.setText("X Wins");
-        resetGame();
+        confirmDialog();
 
     }
 
@@ -279,7 +279,7 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textfield.setText("O Wins");
-        resetGame();
+       confirmDialog();
 
     }
 
@@ -290,7 +290,7 @@ public class TicTacToe implements ActionListener {
             buttons[i].setBackground(new Color (255, 228, 181));
         }
         textfield.setText("Draw");
-        resetGame();
+        confirmDialog();
     }
 
     public void resetGame() {
@@ -301,5 +301,14 @@ public class TicTacToe implements ActionListener {
             buttons[i].setBackground(Color.WHITE);
         }
 
+    }
+
+    public void confirmDialog() {
+        int confirm = JOptionPane.showConfirmDialog(null, "Deseja continuar?", "Escolha a Opção", JOptionPane.YES_NO_OPTION);
+        if (confirm == JOptionPane.YES_OPTION) {
+            resetGame();
+        } else {
+            System.exit(1);
+        }
     }
 }
