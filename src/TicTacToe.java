@@ -42,7 +42,7 @@ public class TicTacToe implements ActionListener {
 
 
 
-        button_panel.setLayout(new GridLayout(3,5));
+        button_panel.setLayout(new GridLayout(3,3));
         button_panel.setBackground(new Color(240,248,255));
 
 
