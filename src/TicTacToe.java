@@ -111,17 +111,9 @@ public class TicTacToe implements ActionListener {
 
     public void firstTurn() {
 
-        try {
-            Thread.sleep(2000);
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-
-        }
 
 
-
-        if(random.nextInt(2)==0) {
+        if(random.nextInt(2)==0) { //se o número aleatório for igual a 0, o turno do player 1 será verdadeiro e será a vez do X, se não o turno do player 1 será falso e será a vez da O
 
             player1_turn=true;
             textfield.setText("X turn");
@@ -279,7 +271,7 @@ public class TicTacToe implements ActionListener {
             buttons[i].setEnabled(false);
         }
         textfield.setText("O Wins");
-       confirmDialog();
+        confirmDialog();
 
     }
 
